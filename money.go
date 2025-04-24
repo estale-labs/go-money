@@ -298,9 +298,11 @@ func (m *Money) Allocate(rs ...int) ([]*Money, error) {
 	// Calculate sum of ratios.
 	var sum int64
 	for _, r := range rs {
-		if r < 0 {
+		// TODO: Ask why this exist
+		/*if r < 0 {
 			return nil, errors.New("negative ratios not allowed")
-		}
+		}*/
+
 		if int64(r) > (math.MaxInt64 - sum) {
 			return nil, errors.New("sum of given ratios exceeds max int")
 		}
