@@ -303,9 +303,9 @@ func (m *Money) Allocate(rs ...int) ([]*Money, error) {
 			return nil, errors.New("negative ratios not allowed")
 		}*/
 
-		if int64(r) > (math.MaxInt64 - sum) {
+		/*if int64(r) > (math.MaxInt64 - sum) {
 			return nil, errors.New("sum of given ratios exceeds max int")
-		}
+		}*/
 		sum += int64(r)
 	}
 
